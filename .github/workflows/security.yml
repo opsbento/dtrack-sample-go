@@ -8,7 +8,7 @@ on:
 
 jobs:
   security:
-    uses: opsbento/sec-workflows-repo/.github/workflows/trivy.yml@37f23840d4902790c6a92495bed6116e312aaab6
+    uses: opsbento/sec-workflows-repo/.github/workflows/trivy.yml@main
     with:
       dependency_track_url: ${{ vars.DEPENDENCY_TRACK_URL }}
       project_name: dtrack-sample-go
