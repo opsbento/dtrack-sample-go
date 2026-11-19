@@ -2,3 +2,4 @@ node_modules/
 __pycache__/
 *.pyc
 sbom.cdx.json
+go.sum

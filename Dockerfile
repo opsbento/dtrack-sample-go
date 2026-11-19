@@ -1,9 +1,7 @@
 FROM golang:1.27.3-alpine3.24 AS build
 WORKDIR /src
-COPY go.mod go.sum ./
-RUN go mod download
-COPY main.go ./
-RUN CGO_ENABLED=0 go build -mod=readonly -trimpath -o /sample .
+COPY go.mod main.go ./
+RUN go mod tidy && CGO_ENABLED=0 go build -mod=readonly -trimpath -o /sample .
 
 FROM scratch
 COPY --from=build /sample /sample
